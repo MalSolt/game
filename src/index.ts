@@ -1,5 +1,12 @@
-import { createCanvas } from './hooks'
+import { game } from './Game'
 
-const ctx = createCanvas()
+const { GAME, canvas, me } = game
 
-ctx.fillRect(10, 10, 100, 100)
+const render = () => {
+  canvas.ctx.fillStyle = '#00000f'
+  canvas.ctx.fillRect(0, 0, GAME.WIDTH, GAME.HEIGHT)
+  game.enemies.forEach((enemy) => enemy.fill())
+  me.fill()
+}
+
+setInterval(render, 5)

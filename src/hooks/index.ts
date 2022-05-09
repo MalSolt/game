@@ -1,1 +1,0 @@
-export { createCanvas } from './createCanvas'
